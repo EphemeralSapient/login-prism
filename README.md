@@ -53,9 +53,6 @@ A standalone login page built with Bun, Vite, React, Ant Design, and Firebase.  
 
  2.  Deploy the contents of the `dist` (or your configured output) folder to your chosen hosting platform.
 
-## Contributing
-
-*   If you'd like to contribute, please fork the repository and submit a pull request.
 
 ## License
 
