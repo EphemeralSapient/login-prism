@@ -2,10 +2,13 @@
 
 A standalone login page built with Bun, Vite, React, Ant Design, and Firebase.  It supports NGINX and other reverse proxy.
 
-## Project Description
+## Visual Previews
 
-*   Project Prism information can be found on repo called with same name. Here this module serves for login purpose on web version. 
+**Light Theme**
+![Light Theme Preview](./preview_light.png)
 
+**Dark Theme**
+![Dark Theme Preview](./preview_dark.png)
 ## Technologies Used
 
 *   **Bun:** A fast all-in-one JavaScript runtime ([https://bun.sh/](https://bun.sh/))
