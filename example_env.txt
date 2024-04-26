@@ -1,0 +1,10 @@
+VITE_FIREBASE_WEB_APIKEY=AIxxxx
+VITE_FIREBASE_AUTHDOMAIN=app-backend-xx
+VITE_FIREBASE_PROJECTID=app-backend-xx
+VITE_FIREBASE_APPID=1:xx:web:xx
+
+# Uncomment this if you want to restrict login to specific email address
+#VITE_AUTHDOMAIN=@xyz.ac.in
+
+# To redirect once loggined in
+VITE_DASHBOARD_URL=/prism/

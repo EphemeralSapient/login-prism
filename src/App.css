@@ -1,0 +1,426 @@
+/* Animate once logged in */
+
+.move-left {
+  opacity: 0;
+  transition: all 1.25s cubic-bezier(0.165, 0.84, 0.44, 1); /* Adjust the duration and timing function as needed */
+}
+
+.move-left-slow {
+  transform: translateX(-100%);
+  opacity: 1;
+  transition: all 1.25s cubic-bezier(0.165, 0.84, 0.44, 1); /* Adjust the duration and timing function as needed */
+}
+/* ************* */
+
+.gradient-background {
+  
+  width:100vw; 
+  height:100vh; 
+  z-index: -9;
+  /* overflow:hidden; or overflow:auto; if you want scrollbars */
+  background: linear-gradient( #000000, #000000); /* Initial background set to white */
+  opacity: 0; /* Initial opacity set to 0 */
+  transition: opacity 700ms ease-out; /* Smooth transition effect */
+
+}
+/* Center the card using flexbox */
+.card-container {
+  display: flex;
+  overflow: hidden;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;    /* Vertical centering */
+  width: 100%;           /* Make the container take full width of .full-size */
+  height: 100%;          /* Make the container take full height of .full-size */
+}
+
+.card.show {
+  height: 70%;
+  max-height: 500px;
+  min-height: 100px;
+  opacity: 1;
+  filter: blur(8px);
+}
+/* Style the card as you wish */ 
+.card {
+  background: rgba(0, 0, 0, 0.05);
+  transition: height 1s cubic-bezier(0, 0.610, 0.355, 1); /* Smooth transition effect */
+min-width: 330px;
+  overflow: hidden;
+  width: 60%;
+  max-width: 400px;
+  height: 0px;
+}
+
+.img.show{
+  filter:blur(10px);
+  @media (prefers-color-scheme: dark) {
+    filter: blur(20px);
+  }
+  opacity: 0.3;
+}
+
+.img {
+  z-index:-1;
+  user-select: none; /* Disable selection on modern browsers */
+  -moz-user-select: none; /* Disable selection on Firefox */
+  -webkit-user-select: none; /* Disable selection on WebKit browsers (Chrome, Safari, etc.) */
+  -ms-user-select: none; /* Disable selection on Microsoft Edge */
+
+  image-rendering: optimizeSpeed;
+  
+  transition: opacity 2s ease; /* Smooth transition effect */
+
+  width: 0px;
+   height: auto;
+   opacity: 0;
+   animation: rotate 732s cubic-bezier(0.215, 0.610, 0.355, 1) infinite; /* Adjust duration and timing function as needed */
+   filter: blur(50px); /* Adjust the blur radius as needed */
+
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.white-input input {
+  color: white !important;
+}
+
+
+.full-size{
+  width:100vw; 
+  height:100vh; 
+   
+  left:0;top:0;overflow:hidden;
+}
+
+.gradient-background.show {
+  @media (prefers-color-scheme: dark) {
+      background: linear-gradient(to right bottom, #000000  , #130F40);
+  }
+  @media (prefers-color-scheme: light) {
+      background: linear-gradient(to right bottom, #4E65FF , #92fdfd); /* Purple to deep blue gradient */
+  }
+  opacity: 1; 
+
+}
+
+.content {
+  transition: opacity 500ms ease; /* Smooth transition effect */
+  opacity: 0;
+  overflow: hidden;
+
+}
+
+.content.show {
+  opacity: 1;
+}
+
+.title {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  line-height: 44px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 33px;
+}
+
+ /* Disabling notice page */
+.ant-pro-form-login-page-notice {
+  width: 0%;
+  height: 0%;
+  flex: 0;
+  display: none;
+  z-index: 0;
+}
+
+ /* Selected tab button */
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: rgba(245, 245, 245, 0.542);
+} 
+
+ /* Tab button default color */
+.ant-tabs-tab-btn {
+  color: black;
+  @media (prefers-color-scheme: dark) {
+    color: grey;
+  }
+
+}
+
+/* To set margin */
+.ant-input-affix-wrapper .ant-input-prefix {
+      margin-inline-end: 14px;
+
+}
+
+
+ /* Text field element  */
+.ant-input-affix-wrapper >input.ant-input, .ant-input-affix-wrapper >textarea.ant-input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  
+
+}
+.ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.347);
+  font-weight: 400;
+}
+
+ /* Title */
+.ant-pro-form-login-page-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: #333; /* Dark text color */
+  @media (prefers-color-scheme: dark) {
+    color: rgb(162, 162, 162);
+}
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Increased letter spacing for emphasis */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+  transition: transform 0.3s ease; /* Smooth transition effect */
+  user-select: none; /* Disable selection on modern browsers */
+  -moz-user-select: none; /* Disable selection on Firefox */
+  -webkit-user-select: none; /* Disable selection on WebKit browsers (Chrome, Safari, etc.) */
+  -ms-user-select: none; /* Disable selection on Microsoft Edge */
+
+
+}
+.ant-pro-form-login-page-title:hover {
+  transform: scale(1.05); /* Scale up on hover for subtle interaction */
+}
+
+/* Desc, followed after title */
+.ant-pro-form-login-page-desc {
+  font-family: 'Roboto', sans-serif;
+  color: #333; /* Dark text color */
+  @media (prefers-color-scheme: dark) {
+    color: grey;
+}
+  font-weight: 300;
+  font-size:15px;
+  user-select: none; /* Disable selection on modern browsers */
+  -moz-user-select: none; /* Disable selection on Firefox */
+  -webkit-user-select: none; /* Disable selection on WebKit browsers (Chrome, Safari, etc.) */
+  -ms-user-select: none; /* Disable selection on Microsoft Edge */
+
+}
+
+/* SSO Icons */
+
+.ant-divider-horizontal.ant-divider-with-text::before, .ant-divider-horizontal.ant-divider-with-text::after {
+  border-block-start: 1px solid black;
+  user-select: none; /* Disable selection on modern browsers */
+  -moz-user-select: none; /* Disable selection on Firefox */
+  -webkit-user-select: none; /* Disable selection on WebKit browsers (Chrome, Safari, etc.) */
+  -ms-user-select: none; /* Disable selection on Microsoft Edge */
+
+}
+@media (prefers-color-scheme: dark) {
+  /* Increase the specificity of this selector */
+  body .ant-divider-horizontal.ant-divider-with-text::before, 
+  body .ant-divider-horizontal.ant-divider-with-text::after {
+    border-block-start: 1px solid grey;
+  }
+}
+
+.ant-space-item {
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transition effects */
+  background-color: #ffffff00; /* Green background color */
+ 
+  user-select: none; /* Disable selection on modern browsers */
+  -moz-user-select: none; /* Disable selection on Firefox */
+  -webkit-user-select: none; /* Disable selection on WebKit browsers (Chrome, Safari, etc.) */
+  -ms-user-select: none; /* Disable selection on Microsoft Edge */
+
+}
+.ssoIcons {
+  border: 1px solid black !important;
+  @media (prefers-color-scheme: dark) {
+    border: 1px solid rgba(255, 255, 255, 0.462) !important;
+  }
+}
+.ant-space-item:hover {
+  background-color: #ffffff3d;
+  cursor: pointer;
+}
+.ant-space-item:active {
+  transform: scale(0.9); /* Slight scale down on click */
+}
+
+/* SSO Text */
+.ant-divider .ant-divider-inner-text {
+  font-family: 'Roboto', sans-serif;
+  color : black;
+  @media (prefers-color-scheme: dark) {
+    color: grey;
+  }
+  font-weight: 300 !important;
+}
+
+/* Submit or login button */
+.ant-btn-primary {
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transition effects */
+  transition: color 0.3s ease, transform 0.1s ease; /* Smooth transition effects */
+
+  color: rgba(255, 255, 255, 0.849);
+  background-color: rgba(0, 0, 0, 0.678);
+  @media (prefers-color-scheme: dark) {
+    color: grey;
+  }
+}
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+  background-color: #4782d58c; /* Darker shade of black on hover */
+  @media (prefers-color-scheme: dark) {
+    background-color: #0303038c; /* Darker shade of black on hover */
+    color: rgba(255, 255, 255, 0.788);
+  }
+  
+}
+.ant-btn-primary:active {
+  transform: scale(0.95); /* Slight scale down on click */
+
+}
+
+/* SSO Icon */
+.ant-space-item {
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.84);
+  }
+}
+
+/* Disabling default outline effect for button and fields */
+.ant-btn-lg {
+  outline: 0px auto -webkit-focus-ring-color !important;
+
+}
+
+/* Text field default values */
+.ant-input-outlined{
+  background-color: rgba(0, 0, 0, 0.042) ;
+  border-color: transparent;
+}
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {  background-color: rgba(0, 0, 0, 0.499);
+}
+
+/* Icon within text field */
+.prefixIcon {
+  color: rgba(240, 240, 240, 0.623) !important;
+}
+
+.prefixIcon:hover {
+  color: rgb(240, 240, 240) !important;
+}
+
+/* White overlay background of form  */
+.ant-pro-form-login-page-container {
+  @media (prefers-color-scheme: dark) {
+    background-image : radial-gradient(circle at 93% 1e+02%, rgba(0, 0, 0, 0.17) 0%, rgba(130, 130, 130, 0.05) 23%, rgba(128, 128, 128, 0.03) 87%, rgba(0, 0, 0, 0.12) 109%);
+  }
+}
+
+/* Notification */
+.ant-message .ant-message-notice-wrapper .ant-message-notice-content {
+  @media (prefers-color-scheme: dark) {
+    background: #1f1f1f;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+}
+
+.ant-message .ant-message-notice-wrapper .ant-message-success>.anticon {
+  color: #49aa19 !important;
+}
+
+/* Project Prism text effect  */
+/* 
+.ant-pro-form-login-page-title:hover {
+  animation: blur-a 3s ease-out infinite;
+	text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+
+@keyframes blur-a {
+	from {
+		text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 50px #fff, 0px 0px 50px #fff, 0px 0px 50px #7B96B8, 0px 0px 150px #7B96B8, 0px 10px 100px #7B96B8, 0px 10px 100px #7B96B8, 0px 10px 100px #7B96B8, 0px 10px 100px #7B96B8, 0px -10px 100px #7B96B8, 0px -10px 100px #7B96B8;
+	}
+}
+@media (prefers-color-scheme: dark) {
+  .ant-pro-form-login-page-title:hover {
+    animation: blur-b 3s ease-out infinite;
+    text-shadow: 0px 0px 5px #000, 0px 0px 7px #000;
+  }
+
+  @keyframes blur-b {
+    from {
+      text-shadow: 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 25px #000, 0px 0px 25px #000, 0px 0px 25px #000, 0px 0px 25px #000, 0px 0px 25px #000, 0px 0px 25px #000, 0px 0px 50px #000, 0px 0px 50px #000, 0px 0px 50px #7B96B8, 0px 0px 150px #7B96B8, 0px 10px 100px #7B96B8, 0px 10px 100px #7B96B8, 0px 10px 100px #7B96B8, 0px 10px 100px #7B96B8, 0px -10px 100px #7B96B8, 0px -10px 100px #7B96B8;
+    }
+  }
+} */
+
+
+.ant-pro-form-login-page-title {
+	padding: 0;
+	z-index: 1;
+}
+
+.ant-pro-form-login-page-title:hover {
+	color: rgba(255, 255, 255, 0.6);
+	-ms-animation: circleOpacity forwards 1s;
+	-moz-animation: circleOpacity forwards 1s;
+	-webkit-animation: circleOpacity forwards 1s;
+	animation: circleOpacity forwards 1s;
+}
+
+@keyframes circleOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.ant-pro-form-login-page-title:before, .ant-pro-form-login-page-title:after {
+	position: absolute;
+	content: "◯";
+	display: block;
+	width: 100%;
+	font-size: 0px;
+	color: rgba(255, 255, 255, 0.6);
+	text-align: center;
+	z-index: -1;
+}
+/* 
+.ant-pro-form-login-page-title:hover:before {
+	animation: circledrop 1s;
+	-ms-animation: circledrop 1s;
+	-moz-animation: circledrop 1s;
+	-webkit-animation: circledrop 1s;
+}
+
+.ant-pro-form-login-page-title:hover:after {
+	animation: circledrop 1s 0.5s;
+	-ms-animation: circledrop 1s 0.5s;
+	-moz-animation: circledrop 1s 0.5s;
+	-webkit-animation: circledrop 1s 0.5s;
+} */
+
+@keyframes circledrop {
+	0% {
+		opacity: 1;
+		font-size: 0;
+	}
+	100% {
+		opacity: 0;
+		font-size: 100px;
+	}
+}
